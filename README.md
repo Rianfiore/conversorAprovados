@@ -41,7 +41,7 @@ Explicação do Projeto:
 
 Para exemplificar, utilizei 3 concursos de sargento para aeronáutica (EAGS SAD, EAGS SEF e EAGS SIN). Esses concursos estão separados em pastas, dentro do diretório './EAGS'.
 
-Ao abrir SAD, por exemplo, existem 2 pastas do código fonte (app1, app2) e 2 arquivos JavaScript (App.js, App2.js). Os arquivos JavaScript são responsáveis pela execução da aplicação. Eles foram dividos propositalmente, para que o usuário possa pegar o resultado em CSV entregue pelo 'App.js', levar ao sistema WEB que retorna um outro CSV, e devolver o retorno para a pasta './app2/src/CSV'. Após colocar o CSV na pasta o arquivo 'App2.js' é executado, entregando o JSON final com o nome e classificação de cada aluno do curso que foi aprovado.
+Ao abrir SAD, por exemplo, existem 2 pastas do código fonte (app1, app2) e 2 arquivos JavaScript (App.js, App2.js). Os arquivos JavaScript são responsáveis pela execução da aplicação, o usuário deve converter o PDF para TXT manualmente e jogar a conversão na pasta './app1/src/TXT'. Esses arquivos JS foram dividos propositalmente, para que o usuário possa pegar o resultado em CSV entregue pelo 'App.js', levar ao sistema WEB que retorna um outro CSV, e devolver o retorno para a pasta './app2/src/CSV'. Após colocar o CSV na pasta o arquivo 'App2.js' é executado, entregando o JSON final com o nome e classificação de cada aluno do curso que foi aprovado.
 
 Após a entrega do JSON final, era necessário converter manualmente o JSON para XLSX e assim finalizar o processo.
 
