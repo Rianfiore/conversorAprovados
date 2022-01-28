@@ -1,5 +1,7 @@
 # conversorAprovados
-Descrição: Aplicação para automatizar o processo de identificação dos aprovados de um curso em múltiplos concursos militares.
+Descrição: Aplicação feita em NodeJS para automatizar o processo de identificação dos aprovados de um curso em múltiplos concursos militares.
+
+Dependências: csv-writer, csvjson
 
 Para entender de fato como funciona o algoritmo é preciso entender primeiro o contexto. Confira abaixo como surgiu a tarefa que resultou nesse algoritmo.
 
@@ -12,11 +14,17 @@ Esse processo era apurado no último bimestre do ano de forma totalmente manual,
 Como funciona esse processo manual?
 
 1- Após a publicação do resultado dos concursos em sites oficiais o arquivo PDF era baixado para dar início ao processo;
+
 2- Era necessário converter o arquivo PDF para XLSX, possibilitando-o abrir em um editor de planilhas para ajeitar os erros de conversão;
+
 3- O processo de correção de erros é a tarefa mais demorada, cerca de 1500 linhas eram corrigidas (varia de acordo com os concursos), após a correção uma exportação em CSV era feita;
+
 4- Com a exportação concluída, o arquivo era levado ao sistema WEB do curso, onde era enviado para análise de alunos que fazem parte do curso;
+
 5- Ao analisar, o sistema retornava um novo CSV contendo alunos que fazem parte do curso e que foram aprovados nos concursos;
+
 6- O novo CSV passa pelo editor de planilhas, onde será feita uma consulta (PROCV) para verificar a classificação de cada aprovado;
+
 7- O processo é finalizado após a consulta desses dados, deixando pronto para a equipe poder entrar em contato com os alunos aprovados;
 
 Solução do problema:
@@ -35,5 +43,5 @@ Para exemplificar, utilizei 3 concursos de sargento para aeronáutica (EAGS SAD,
 
 Ao abrir SAD, por exemplo, existem 2 pastas do código fonte (app1, app2) e 2 arquivos JavaScript (App.js, App2.js). Os arquivos JavaScript são responsáveis pela execução da aplicação. Eles foram dividos propositalmente, para que o usuário possa pegar o resultado em CSV entregue pelo 'App.js', levar ao sistema WEB que retorna um outro CSV, e devolver o retorno para a pasta './app2/src/CSV'. Após colocar o CSV na pasta o arquivo 'App2.js' é executado, entregando o JSON final com o nome e classificação de cada aluno do curso que foi aprovado.
 
-Após entregar o JSON final, era necessário converter manualmente o JSON para XLSX e assim finalizar o processo.
+Após a entrega do JSON final, era necessário converter manualmente o JSON para XLSX e assim finalizar o processo.
 
