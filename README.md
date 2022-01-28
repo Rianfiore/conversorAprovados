@@ -3,6 +3,14 @@ Descrição: Aplicação feita em NodeJS para automatizar o processo de identifi
 
 Dependências: csv-writer, csvjson
 
+Como Usar:
+
+Para exemplificar, utilizei 3 concursos de sargento para aeronáutica (EAGS SAD, EAGS SEF e EAGS SIN). Esses concursos estão separados em pastas, dentro do diretório './EAGS'.
+
+Ao abrir SAD, por exemplo, existem 2 pastas do código fonte (app1, app2) e 2 arquivos JavaScript (App.js, App2.js). Os arquivos JavaScript são responsáveis pela execução da aplicação, o usuário deve converter o PDF para TXT manualmente e jogar a conversão na pasta './app1/src/TXT'. Esses arquivos JS foram dividos propositalmente, para que o usuário possa pegar o resultado em CSV entregue pelo 'App.js', levar ao sistema WEB que retorna um outro CSV, e devolver o retorno para a pasta './app2/src/CSV'. Após colocar o CSV na pasta o arquivo 'App2.js' é executado, entregando o JSON final com o nome e classificação de cada aluno do curso que foi aprovado.
+
+Após a entrega do JSON final, era necessário converter manualmente o JSON para XLSX e assim finalizar o processo.
+
 Para entender de fato como funciona o algoritmo é preciso entender primeiro o contexto. Confira abaixo como surgiu a tarefa que resultou nesse algoritmo.
 
 Apresentação do Problema:
@@ -36,12 +44,4 @@ A sugestão foi aceita por ela com uma condição: O prazo de entrega máximo er
 O desafio era maior por conta da ausência de uma API do sistema WEB para acessar os dados dos alunos cadastrados. Para piorar o funcionário responsável pela criação do banco de dados não fazia mais parte da equipe e o setor de marketing não tinha permissão para acessar esses dados.
 
 Trabalhando sozinho e com acesso limitado aos dados tive que dividir o algoritmo em 2 partes, tentando automatizar o máximo de tarefas possíveis. No final o algoritmo conseguiu agilizar o processo, reduzindo o tempo de entrega em 1 dia.
-
-Explicação do Projeto:
-
-Para exemplificar, utilizei 3 concursos de sargento para aeronáutica (EAGS SAD, EAGS SEF e EAGS SIN). Esses concursos estão separados em pastas, dentro do diretório './EAGS'.
-
-Ao abrir SAD, por exemplo, existem 2 pastas do código fonte (app1, app2) e 2 arquivos JavaScript (App.js, App2.js). Os arquivos JavaScript são responsáveis pela execução da aplicação, o usuário deve converter o PDF para TXT manualmente e jogar a conversão na pasta './app1/src/TXT'. Esses arquivos JS foram dividos propositalmente, para que o usuário possa pegar o resultado em CSV entregue pelo 'App.js', levar ao sistema WEB que retorna um outro CSV, e devolver o retorno para a pasta './app2/src/CSV'. Após colocar o CSV na pasta o arquivo 'App2.js' é executado, entregando o JSON final com o nome e classificação de cada aluno do curso que foi aprovado.
-
-Após a entrega do JSON final, era necessário converter manualmente o JSON para XLSX e assim finalizar o processo.
 
